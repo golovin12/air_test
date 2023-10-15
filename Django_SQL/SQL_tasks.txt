@@ -1,0 +1,24 @@
+1)
+'SELECT "store"."name", CAST(SUM("purchase"."price") AS NUMERIC) AS "sum_p"
+FROM "purchase"
+INNER JOIN "store" ON ("purchase"."store_id" = "store"."id")
+GROUP BY "store"."name"'
+
+
+2)
+'SELECT "store"."name", "purchase"."product", "purchase"."price"
+FROM "purchase"
+INNER JOIN "store" ON ("purchase"."store_id" = "store"."id")'
+
+
+3)
+'SELECT "store"."name", COUNT("purchase"."id") AS "count"
+FROM "purchase"
+INNER JOIN "store" ON ("purchase"."store_id" = "store"."id")
+WHERE "purchase"."price" >= \'100\'
+GROUP BY "store"."name"'
+
+
+
+
+
